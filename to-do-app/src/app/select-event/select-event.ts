@@ -48,7 +48,8 @@ eventTitle: string = '';
   const newEvent: Eventt = {
     Name: this.eventTitle,
     Datetime: this.DateTime,
-    EventTypeId: parseInt(this.selectedEventTypeId) 
+    EventTypeId: parseInt(this.selectedEventTypeId), 
+    Completed:false
   };
   this.eventService.postEvent(newEvent).subscribe(data => {
   this.events2 = data;
@@ -70,7 +71,8 @@ saveUpdatedEvent(id:number){
   const newEvent: Eventt = {
     Name: this.editableName,
     Datetime: this.editableDateTime,
-    EventTypeId: parseInt(this.editableTypeId)
+    EventTypeId: parseInt(this.editableTypeId), 
+    Completed:false
   };
   this.eventService.updateEvent(id,newEvent).subscribe(data => {
   this.events2 = data;
@@ -87,6 +89,26 @@ this.editingEventId = null;
   editableName:string = '';
   editableDateTime:string = '';
   editableTypeId:string = '';
-  
+  getEventTypeIdByName(name: string): number {
+  switch (name) {
+    case 'Meeting': return 1;
+    case 'Call': return 2;
+    case 'Sports': return 3;
+    case 'Family': return 4;
+    default:
+      return 1;
+  }
+}
+  CompletedEvent(id:number){
+   const eventTemp = this.events2.find(e => e.id === id);
+   if (!eventTemp) return;
+   const newEvent: Eventt = {
+   Name: eventTemp.name,
+   Datetime: eventTemp.datetime,
+   EventTypeId: this.getEventTypeIdByName(eventTemp.eventType),
+   Completed: true
+  };
+    this.eventService.updateEvent(id,newEvent).subscribe(data=>this.events2 = data)
+  }
 
 } 

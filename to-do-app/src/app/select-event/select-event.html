@@ -13,6 +13,7 @@
         </select>
     </div>
 </form>
+  <button type = "button" class="gold-button" routerLink="nextPage">Next Page</button>
 
 <ul>
   <li *ngFor="let event of events2">
@@ -22,6 +23,7 @@
       {{ event.name }} - {{ event.datetime }} - {{ event.eventType }}
       <button (click)="cLickedUpdate(event.id)">Update</button>
       <button (click)="DeleteEvent(event.id)">Delete</button>
+      <button (click) = "CompletedEvent(event.id)">Completed</button>
     </div>
 
     <!-- Show this if currently editing this event -->
@@ -40,4 +42,3 @@
     
   </li>
 </ul>
-<button type = "button" routerLink="nextPage">Next Page</button>

@@ -1,3 +1,3 @@
 export type Eventt = {
-    Name: string, Datetime: string,EventTypeId: number
+    Name: string, Datetime: string,EventTypeId: number,Completed:boolean
 }
