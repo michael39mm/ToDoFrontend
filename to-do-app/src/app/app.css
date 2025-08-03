@@ -1,0 +1,9 @@
+.x{
+    display: flex;
+  flex-direction: row; /* aligns children side by side */
+  gap: 20px; /* space between components */
+  align-items: center; /* align them vertically */
+  margin-top: 20px;
+  padding-right: 50px;
+  justify-content: center;
+}

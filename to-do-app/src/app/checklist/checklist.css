@@ -1,0 +1,35 @@
+.eventType {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+  appearance: none;
+  cursor: pointer;
+}
+.eventType option{
+    font-size: 16px;
+  color: #7c0606;
+  border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+cursor: pointer;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.eventType:focus {
+  border-color: #007BFF;
+  outline: none;
+  background-color: #fff;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}

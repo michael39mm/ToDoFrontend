@@ -1,0 +1,13 @@
+<form (ngSubmit)="submitHobby()">
+  <input [(ngModel)]="hobby" name="hobby" placeholder="Enter your hobby" required />
+  <button type="submit">Add Hobby</button>
+</form>
+
+<ul>
+    <div *ngFor="let h of hobbies">
+        <li>
+            {{ h }}
+        </li>
+        <button class="done-btn" (click)="done(h)">Done</button>
+    </div>
+</ul>

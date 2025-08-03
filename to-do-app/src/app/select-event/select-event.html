@@ -1,0 +1,43 @@
+ <form (ngSubmit) = "SubmitEvent()">
+    <button type="submit">Add Hobby</button>
+    <div>
+        <label for="eventDateTime">Pick a date and time:</label>
+        <input type="datetime-local" name ="Datetime" class = "datee" [(ngModel)] = "DateTime" (change) = "onSelectionChoice($event)">
+        <input type="text" [(ngModel)]="eventTitle" name = "Name" placeholder="Name of Event"> 
+        <select class="eventType" name = "TypeId" (change)="onEventTypeChange($event)">
+          <option value="" disabled selected>Select Event Type</option>
+          <option value="1">Meeting</option>
+          <option value="2">Call</option>
+          <option value="3">Sports</option>
+          <option value="4">Family</option>
+        </select>
+    </div>
+</form>
+
+<ul>
+  <li *ngFor="let event of events2">
+    
+    <!-- Show this if NOT editing -->
+    <div *ngIf="editingEventId === null">
+      {{ event.name }} - {{ event.datetime }} - {{ event.eventType }}
+      <button (click)="cLickedUpdate(event.id)">Update</button>
+      <button (click)="DeleteEvent(event.id)">Delete</button>
+    </div>
+
+    <!-- Show this if currently editing this event -->
+    <div *ngIf="editingEventId === event.id">
+      <input type="text" [(ngModel)]="editableName" placeholder="Event Name" />
+      <input type="datetime-local" [(ngModel)]="editableDateTime" />
+      <select [(ngModel)]="editableTypeId">
+        <option value="1">Meeting</option>
+        <option value="2">Call</option>
+        <option value="3">Sports</option>
+        <option value="4">Family</option>
+      </select>
+      <button (click)="saveUpdatedEvent(event.id)">Save</button>
+      <button (click)="cancelEditing()">Cancel</button>
+    </div>
+    
+  </li>
+</ul>
+<button type = "button" routerLink="nextPage">Next Page</button>
