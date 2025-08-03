@@ -11,7 +11,7 @@ import { SelectEvent } from './select-event/select-event';
 
 
 @Component({
-  selector: 'app-oot',
+  selector: 'app-root',
   imports: [Header,Formm,Checklist,When,NameEvent,FormsModule,SelectEvent,RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
