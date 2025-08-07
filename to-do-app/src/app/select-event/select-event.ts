@@ -5,10 +5,10 @@ import { Eventt } from '../Eventt';
 import { CommonModule } from '@angular/common';
 import { Eventt2 } from '../Eventt2';
 import { EventService } from '../eventService';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-select-event',
-  imports: [FormsModule,CommonModule,RouterLink],
+  imports: [FormsModule,CommonModule,RouterLink,RouterModule],
   standalone:true,
   templateUrl: './select-event.html',
   styleUrl: './select-event.css'

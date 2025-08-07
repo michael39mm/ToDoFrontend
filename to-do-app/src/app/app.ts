@@ -11,6 +11,7 @@ import { LoginCredentials } from './login-credentials/login-credentials';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EventService } from './eventService';
 import { AuthInterceptor } from './auth.interceptor';
+import { SignInUp } from './sign-in-up/sign-in-up';
 
 
 
@@ -26,7 +27,7 @@ import { AuthInterceptor } from './auth.interceptor';
     SelectEvent,
     LoginCredentials,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,SignInUp
   ],providers: [
     EventService,
     {
