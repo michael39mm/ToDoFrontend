@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
 import { SelectEvent } from './select-event/select-event';
 import { NextPage } from './next-page/next-page';
-import { authGuard } from './auth-guard';
+import { LoginCredentials } from './login-credentials/login-credentials';
+import { loginGuard } from './login-guard';
 
 export const routes: Routes = [
-  { path: '', component: SelectEvent },
-  { path: 'nextPage', component: NextPage,canActivate : [authGuard] }
+  { path: '', component: LoginCredentials },
+  { path: 'SelectEvent', component: SelectEvent ,canActivate: [loginGuard] },
+  { path: 'nextPage', component: NextPage }
+  
 ];

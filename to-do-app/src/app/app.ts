@@ -7,12 +7,34 @@ import { When } from './when/when';
 import { NameEvent } from './name-event/name-event';
 import { FormsModule } from '@angular/forms';
 import { SelectEvent } from './select-event/select-event';
+import { LoginCredentials } from './login-credentials/login-credentials';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { EventService } from './eventService';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [Header,Formm,Checklist,When,NameEvent,FormsModule,SelectEvent,RouterOutlet],
+  imports: [
+    RouterOutlet,
+    Header,
+    Formm,
+    Checklist,
+    When,
+    NameEvent,
+    SelectEvent,
+    LoginCredentials,
+    FormsModule,
+    HttpClientModule
+  ],providers: [
+    EventService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Eventt } from './Eventt';
 import { Eventt2 } from './Eventt2';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -32,4 +32,5 @@ export class EventService {
       switchMap(() => this.getEvents())
     );
   }
+  
 }
