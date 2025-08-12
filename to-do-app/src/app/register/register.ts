@@ -18,10 +18,12 @@ export class Register {
   private router = inject(Router);
   private logService = inject(LoginService);
   password:string ='';
+  role:string = '';
   register() {
     const loginDto: LoginType = {
           Email: this.email,
-          Password: this.password
+          Password: this.password,
+          Role: this.role
         };
     this.logService.register(loginDto)
       .subscribe({

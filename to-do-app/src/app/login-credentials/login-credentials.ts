@@ -17,10 +17,13 @@ export class LoginCredentials {
   private router = inject(Router);
   email:string = ''; 
   password:string = '';
+  role:string = '';
+  roleId:number = 0;
   submitCredentials() {
     const loginDto: LoginType = {
       Email: this.email,
-      Password: this.password
+      Password: this.password,
+      Role: this.role
     };
 
     this.loginService.login(loginDto).subscribe({
@@ -33,5 +36,6 @@ export class LoginCredentials {
       }
     });
   }
+
 
 }

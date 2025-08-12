@@ -23,8 +23,7 @@ import { SignInUp } from './sign-in-up/sign-in-up';
     Formm,
     Checklist,
     When,
-    NameEvent,
-    SelectEvent,
+      SelectEvent,
     LoginCredentials,
     FormsModule,
     HttpClientModule,SignInUp

@@ -1,0 +1,41 @@
+/* Center the button container vertically and horizontally */
+.button-container {
+  height: 100vh; /* Full screen height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items:center;     /* Center vertically */
+  gap: 120px;               /* Space between buttons */
+}
+
+.inButton, .upButton {
+  padding: 12px 28px;
+  font-size: 16px;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific styles for login button */
+.inButton {
+  background-color: #007bff;
+  color: white;
+}
+
+.inButton:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Specific styles for register button */
+.upButton {
+  background-color: #6c757d;
+  color: white;
+}
+
+.upButton:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}

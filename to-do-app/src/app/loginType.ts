@@ -1,4 +1,4 @@
 export type LoginType = {
-    Email:string,Password:string
+    Email:string,Password:string,Role:string
 
 }
